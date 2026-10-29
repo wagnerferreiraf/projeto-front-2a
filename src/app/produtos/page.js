@@ -7,7 +7,10 @@ export default function Produtos() {
     const [prods, setProds] = useState(null);
     // const [cats, setCats] = useState(null);
 
-    // const getNomeCategoria = (id) => cats?.find((cat) => cat.id === id)?.nome ?? id;
+    // const getNomeCategoria = (id_categoria) => {
+    //     const categoria = cats?.find(cat => cat.id === id_categoria);
+    //     return categoria ? categoria.nome : 'Categoria indefinida';
+    // }
 
     useEffect(() => {
         const fetchProds = async () => {
