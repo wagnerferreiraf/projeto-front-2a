@@ -5,6 +5,9 @@ import styles from './page.module.css';
 export default function Produtos() {
 
     const [prods, setProds] = useState(null);
+    // const [cats, setCats] = useState(null);
+
+    // const getNomeCategoria = (id) => cats?.find((cat) => cat.id === id)?.nome ?? id;
 
     useEffect(() => {
         const fetchProds = async () => {
@@ -23,8 +26,21 @@ export default function Produtos() {
         fetchProds();
     }, []);
 
-
-    // crie um fetchCats para buscar as categorias...
+    // useEffect(() => {
+    //     const fetchCats = async () => {
+    //         try {
+    //             const response = await fetch('https://stock.dev.vilhena.ifro.edu.br/api/categorias');
+    //             if (!response.ok) {
+    //                 throw new Error(`Erro ao buscar Categorias ${response.statusText}`);
+    //             }
+    //             const data = await response.json();
+    //             setCats(data);
+    //         } catch (e) {
+    //             console.log(`${e.message}`);
+    //         }
+    //     }
+    //     fetchCats();
+    // }, []);
 
     return (
         < div >
@@ -49,6 +65,7 @@ export default function Produtos() {
                                     <td>{prod.id}</td>
                                     <td>{prod.nome}</td>
                                     <td>{prod.descricao}</td>
+                                    {/* <td>{getNomeCategoria(prod.categoria_id)}</td> */}
                                     <td>{prod.categoria_id}</td>
                                     <td>{prod.quantidade_estoque}</td>
                                     <td>{prod.preco}</td>
